@@ -7,7 +7,7 @@ model_dia = joblib.load("random_search_hgbc_model.joblib")
 model_hype = joblib.load("hgbc_model_for_hypertension.joblib")
 
 # Initialize Flask app
-app = Flask(_name_, template_folder='templete')
+app = Flask(__name__, template_folder='templete')
 
 # Home route
 @app.route('/')
@@ -63,5 +63,5 @@ def Hypertension():
     return render_template('hpe.html')
 
     
-if _name_ == "_main_":
+if __name__ == "_main_":
     app.run(debug=True)
